@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  app:
+    image: 'z3r05um/sandbox-akka-http:latest'
+    ports:
+      - '8080:8080'
