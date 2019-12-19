@@ -1,8 +1,13 @@
 package dev.zerosum.sandbox
 
-object BootStrap {
+import dev.zerosum.sandbox.server.HttpServer
+import wvlet.airframe.bind
 
-  def main(args: Array[String]): Unit = {
-    HttpServer.startServer("0.0.0.0", 8080)
+trait BootStrap {
+
+  private lazy val server = bind[HttpServer]
+
+  def start(): Unit = {
+    server.startServer("0.0.0.0", 8080)
   }
 }
